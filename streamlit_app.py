@@ -1,10 +1,14 @@
 import streamlit as st
 
 # Definimos los grupos de departamentos en base a su topografía
-st.title("Estimación del área de afectación de explosiones de cilindros de gas GLP en Colombia mediante un modelo matemático de difusión en medios heterogéneos")
+st.title("Estimación del área de afectación de explosiones de cilindros de gas GLP en Colombia mediante un modelo matemático de difusión en medios heterogéneos.")
 grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca"]
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
+
+opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_1)
+opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_2)
+opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_3)
 
 # # Mostramos los departamentos al usuario
 # print("\nDepartamentos de Colombia:")
