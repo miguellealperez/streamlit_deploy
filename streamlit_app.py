@@ -17,7 +17,7 @@ opciones = {
     'Grupo 3': grupo_3
 }
 
-seleccion = st.selectbox('Selecciona un Grupo y su departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
+seleccion = st.selectbox('Primero el Grupo y luego su correspondiente departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
 # grupo_seleccionado = st.selectbox('Selecciona un grupo', options=list(opciones.keys()), index=0)
 # departamentos = opciones[grupo_seleccionado]
 # titulo = 'Selecciona un departamento' if grupo_seleccionado != 'Grupo 2' else 'Selecciona un departamento del grupo 2'
@@ -28,7 +28,7 @@ if seleccion:
     departamento = st.selectbox('', seleccion[1])
     # st.write(f'Se ha seleccionado el departamento {departamento}')
     
-if grupo_1.count(departamento) > 0:
+if grupo_1.count(departamento):
     jerarquia = 1
     descripcion = """\n\n
     Este departamento se encuentra en el grupo con mayor probabilidad de ser 
@@ -44,7 +44,7 @@ if grupo_1.count(departamento) > 0:
     \n3. Se debe fortalecer la capacidad de respuesta de las autoridades locales y nacionales 
     ante emergencias, mediante la dotación de equipos y herramientas necesarios, y la 
     actualización constante de los planes de contingencia."""
-elif grupo_2.count(departamento) > 0:
+elif grupo_2.count(departamento):
     jerarquia = 2
     descripcion = """\n\n
     Este departamento se encuentra en el grupo intermedio de probabilidad de ser
