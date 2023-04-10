@@ -6,9 +6,11 @@ grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca"
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 
-opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_1)
-opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_2)
-opcion_seleccionada = st.selectbox('Selecciona una opción:', grupo_3)
+st.header('Seleccione un departamento por su número para determinar la afectacion de la explosion del tanque de GLP:')
+
+opcion_seleccionada = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
+opcion_seleccionada = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
+opcion_seleccionada = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
 
 # # Mostramos los departamentos al usuario
 # print("\nDepartamentos de Colombia:")
