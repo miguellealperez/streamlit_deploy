@@ -1,172 +1,171 @@
 import streamlit as st
 
 # Definimos los grupos de departamentos en base a su topografía
-st.title("""Estimación del área de afectación de explosiones de cilindros de gas GLP 
-en Colombia mediante un modelo matemático de difusión en medios heterogéneos""")
+st.title("Estimación del área de afectación de explosiones de cilindros de gas GLP en Colombia mediante un modelo matemático de difusión en medios heterogéneos")
 grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca"]
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 
-# Mostramos los departamentos al usuario
-print("\nDepartamentos de Colombia:")
-for i, departamento in enumerate(grupo_1 + grupo_2 + grupo_3):
-    print(f"{i+1}. {departamento}")
+# # Mostramos los departamentos al usuario
+# print("\nDepartamentos de Colombia:")
+# for i, departamento in enumerate(grupo_1 + grupo_2 + grupo_3):
+#     print(f"{i+1}. {departamento}")
 
-# Pedimos al usuario que seleccione un departamento
-while True:
-    departamento_seleccionado = input("""\nSeleccione un departamento por su número
-para determinar la afectacion de la explosion del tanque de GLP: """)
-    if departamento_seleccionado.isdigit() and 1 <= int(departamento_seleccionado) <= 32:
-        break
-    else:
-        print("\nEl valor ingresado no es válido. Por favor, seleccione un número entre 1 y 32.")
+# # Pedimos al usuario que seleccione un departamento
+# while True:
+#     departamento_seleccionado = input("""\nSeleccione un departamento por su número
+# para determinar la afectacion de la explosion del tanque de GLP: """)
+#     if departamento_seleccionado.isdigit() and 1 <= int(departamento_seleccionado) <= 32:
+#         break
+#     else:
+#         print("\nEl valor ingresado no es válido. Por favor, seleccione un número entre 1 y 32.")
 
-departamento_seleccionado = grupo_1[int(departamento_seleccionado)-1] if int(departamento_seleccionado) <= len(grupo_1) else grupo_2[int(departamento_seleccionado)-len(grupo_1)-1] if int(departamento_seleccionado) <= len(grupo_1) + len(grupo_2) else grupo_3[int(departamento_seleccionado)-len(grupo_1)-len(grupo_2)-1]
+# departamento_seleccionado = grupo_1[int(departamento_seleccionado)-1] if int(departamento_seleccionado) <= len(grupo_1) else grupo_2[int(departamento_seleccionado)-len(grupo_1)-1] if int(departamento_seleccionado) <= len(grupo_1) + len(grupo_2) else grupo_3[int(departamento_seleccionado)-len(grupo_1)-len(grupo_2)-1]
 
-# Verificamos en qué grupo se encuentra el departamento seleccionado
-if grupo_1.count(departamento_seleccionado) > 0:
-    jerarquia = 1
-    descripcion = """\n\n
-    Este departamento se encuentra en el grupo con mayor probabilidad de ser 
-    afectado gravemente por una explosión, debido a su topografía montañosa y su 
-    densa población. Se recomienda tomar medidas de precaución en caso de una emergencia.
-    \nRecomendaciones:
-    \n1. Realice una evaluación detallada de las zonas de mayor riesgo en el departamento, 
-    y se establezcan planes de contingencia para prevenir y responder a emergencias 
-    relacionadas con explosiones de cilindros de gas GLP.
-    \n2. Es importante que se implementen medidas preventivas, como la capacitación de la 
-    población en el manejo adecuado de cilindros de gas GLP, la verificación periódica 
-    de las instalaciones de gas y la promoción de la cultura de seguridad en la comunidad.
-    \n3. Se debe fortalecer la capacidad de respuesta de las autoridades locales y nacionales 
-    ante emergencias, mediante la dotación de equipos y herramientas necesarios, y la 
-    actualización constante de los planes de contingencia."""
-elif grupo_2.count(departamento_seleccionado) > 0:
-    jerarquia = 2
-    descripcion = """\n\n
-    Este departamento se encuentra en el grupo intermedio de probabilidad de ser
-    afectado por una explosión, debido a su topografía relativamente plana y 
-    baja densidad poblacional. Se recomienda mantenerse alerta en caso de una emergencia.
-    \nRecomendaciones:
-    \n1. Mantener una actitud preventiva y estar atento a las señales de peligro en caso 
-    de una emergencia, evitando situaciones de riesgo innecesarias y tomando medidas para
-    proteger su seguridad y la de las personas a su alrededor.
-    \n2. Informarse sobre las medidas de seguridad y los protocolos de evacuación en caso
-    de una emergencia relacionada con el GLP, y estar preparado para actuar de manera rápida
-    y segura.
-    \n3. Asegurarse de tener un plan de emergencia en caso de una explosión, incluyendo la 
-    identificación de las salidas de emergencia y los puntos de reunión."""
-else:
-    jerarquia = 3
-    descripcion = """\n\n
-    Este departamento se encuentra en el grupo con menor probabilidad de ser 
-    afectado por una explosión, debido a su topografía plana y baja densidad poblacional. 
-    Aunque el riesgo es bajo, se recomienda estar informado y preparado en caso de una emergencia.
-    \nRecomendaciones:
-    \n1. Aunque el riesgo de una explosión en este departamento sea bajo, es importante mantenerse 
-    informado sobre los riesgos de manejar y almacenar gas GLP. Conocer las medidas de seguridad 
-    recomendadas para el transporte y uso del gas GLP puede ayudar a prevenir accidentes y reducir 
-    riesgos.
-    \n2. A pesar de que el riesgo de una explosión sea bajo, es importante estar preparado en caso 
-    de una emergencia. Familiarizarse con las medidas de seguridad recomendadas en caso de una 
-    explosión de gas GLP y tener un plan de acción en caso de emergencia puede ayudar a reducir 
-    los riesgos y aumentar la seguridad.
-    \n3. Aunque la topografía del departamento y su densidad poblacional sugieran un menor riesgo 
-    de explosión, es importante tomar en cuenta que ningún lugar está completamente exento de riesgos. 
-    Por lo tanto, es fundamental mantener una actitud vigilante y estar alerta ante cualquier situación 
-    que pueda representar un peligro."""
+# # Verificamos en qué grupo se encuentra el departamento seleccionado
+# if grupo_1.count(departamento_seleccionado) > 0:
+#     jerarquia = 1
+#     descripcion = """\n\n
+#     Este departamento se encuentra en el grupo con mayor probabilidad de ser 
+#     afectado gravemente por una explosión, debido a su topografía montañosa y su 
+#     densa población. Se recomienda tomar medidas de precaución en caso de una emergencia.
+#     \nRecomendaciones:
+#     \n1. Realice una evaluación detallada de las zonas de mayor riesgo en el departamento, 
+#     y se establezcan planes de contingencia para prevenir y responder a emergencias 
+#     relacionadas con explosiones de cilindros de gas GLP.
+#     \n2. Es importante que se implementen medidas preventivas, como la capacitación de la 
+#     población en el manejo adecuado de cilindros de gas GLP, la verificación periódica 
+#     de las instalaciones de gas y la promoción de la cultura de seguridad en la comunidad.
+#     \n3. Se debe fortalecer la capacidad de respuesta de las autoridades locales y nacionales 
+#     ante emergencias, mediante la dotación de equipos y herramientas necesarios, y la 
+#     actualización constante de los planes de contingencia."""
+# elif grupo_2.count(departamento_seleccionado) > 0:
+#     jerarquia = 2
+#     descripcion = """\n\n
+#     Este departamento se encuentra en el grupo intermedio de probabilidad de ser
+#     afectado por una explosión, debido a su topografía relativamente plana y 
+#     baja densidad poblacional. Se recomienda mantenerse alerta en caso de una emergencia.
+#     \nRecomendaciones:
+#     \n1. Mantener una actitud preventiva y estar atento a las señales de peligro en caso 
+#     de una emergencia, evitando situaciones de riesgo innecesarias y tomando medidas para
+#     proteger su seguridad y la de las personas a su alrededor.
+#     \n2. Informarse sobre las medidas de seguridad y los protocolos de evacuación en caso
+#     de una emergencia relacionada con el GLP, y estar preparado para actuar de manera rápida
+#     y segura.
+#     \n3. Asegurarse de tener un plan de emergencia en caso de una explosión, incluyendo la 
+#     identificación de las salidas de emergencia y los puntos de reunión."""
+# else:
+#     jerarquia = 3
+#     descripcion = """\n\n
+#     Este departamento se encuentra en el grupo con menor probabilidad de ser 
+#     afectado por una explosión, debido a su topografía plana y baja densidad poblacional. 
+#     Aunque el riesgo es bajo, se recomienda estar informado y preparado en caso de una emergencia.
+#     \nRecomendaciones:
+#     \n1. Aunque el riesgo de una explosión en este departamento sea bajo, es importante mantenerse 
+#     informado sobre los riesgos de manejar y almacenar gas GLP. Conocer las medidas de seguridad 
+#     recomendadas para el transporte y uso del gas GLP puede ayudar a prevenir accidentes y reducir 
+#     riesgos.
+#     \n2. A pesar de que el riesgo de una explosión sea bajo, es importante estar preparado en caso 
+#     de una emergencia. Familiarizarse con las medidas de seguridad recomendadas en caso de una 
+#     explosión de gas GLP y tener un plan de acción en caso de emergencia puede ayudar a reducir 
+#     los riesgos y aumentar la seguridad.
+#     \n3. Aunque la topografía del departamento y su densidad poblacional sugieran un menor riesgo 
+#     de explosión, es importante tomar en cuenta que ningún lugar está completamente exento de riesgos. 
+#     Por lo tanto, es fundamental mantener una actitud vigilante y estar alerta ante cualquier situación 
+#     que pueda representar un peligro."""
 
-# Mostramos la información del departamento seleccionado
-print(f"\nEl departamento seleccionado es: {departamento_seleccionado}")
-print(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {descripcion}")
+# # Mostramos la información del departamento seleccionado
+# print(f"\nEl departamento seleccionado es: {departamento_seleccionado}")
+# print(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {descripcion}")
 
-# Código para alcance de afectación de la explosión de un cilindro de gas
+# # Código para alcance de afectación de la explosión de un cilindro de gas
 
-import math
+# import math
 
-def bst_model(distance, pressure_initial, pressure_burst, mass):
-    """Función que calcula el alcance de afectación de una explosión de un cilindro de gas GLP
-    utilizando el modelo de Baker-Strehlow-Tang."""
+# def bst_model(distance, pressure_initial, pressure_burst, mass):
+#     """Función que calcula el alcance de afectación de una explosión de un cilindro de gas GLP
+#     utilizando el modelo de Baker-Strehlow-Tang."""
     
-    # Constantes del modelo
-    k = 1.4  # Coeficiente de isentrópica
-    C = 1.5  # Coeficiente empírico
+#     # Constantes del modelo
+#     k = 1.4  # Coeficiente de isentrópica
+#     C = 1.5  # Coeficiente empírico
     
-    # Cálculo de la energía total de la explosión
-    energy = (k / (k - 1)) * mass * (pressure_burst / pressure_initial) * (1 - math.pow(1 / (pressure_burst / pressure_initial), (k - 1) / k))
+#     # Cálculo de la energía total de la explosión
+#     energy = (k / (k - 1)) * mass * (pressure_burst / pressure_initial) * (1 - math.pow(1 / (pressure_burst / pressure_initial), (k - 1) / k))
     
-    # Cálculo del alcance de afectación
-    radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
+#     # Cálculo del alcance de afectación
+#     radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
     
-    return radius
+#     return radius
 
-# Opciones de cilindros y masas
-cilindros = {
-    1: {"descripcion": "Cilindro de 100 lb","masa": 45},
-    2: {"descripcion": "Cilindro de 40 lb", "masa": 18},
-    3: {"descripcion": "Cilindro de 33 lb", "masa": 15},
-    4: {"descripcion": "Cilindro de 20 lb", "masa": 9},
-    5: {"descripcion": "Cilindro de 10 lb", "masa": 5}
-}
+# # Opciones de cilindros y masas
+# cilindros = {
+#     1: {"descripcion": "Cilindro de 100 lb","masa": 45},
+#     2: {"descripcion": "Cilindro de 40 lb", "masa": 18},
+#     3: {"descripcion": "Cilindro de 33 lb", "masa": 15},
+#     4: {"descripcion": "Cilindro de 20 lb", "masa": 9},
+#     5: {"descripcion": "Cilindro de 10 lb", "masa": 5}
+# }
 
-# Mostrar opciones de cilindros y pedir selección al usuario
-print("\n\nSeleccione el cilindro que exploto: \n")
-for i in cilindros:
-    print(f"{i}: {cilindros[i]['descripcion']} (masa = {cilindros[i]['masa']} kg)")
+# # Mostrar opciones de cilindros y pedir selección al usuario
+# print("\n\nSeleccione el cilindro que exploto: \n")
+# for i in cilindros:
+#     print(f"{i}: {cilindros[i]['descripcion']} (masa = {cilindros[i]['masa']} kg)")
 
-# Ciclo para validar la selección del usuario
-seleccion = None
-while seleccion not in cilindros:
-    try:
-        seleccion = int(input("\nOpción: "))
-    except ValueError:
-        print("\nError: selección no válida. Intente de nuevo.")
-        continue
+# # Ciclo para validar la selección del usuario
+# seleccion = None
+# while seleccion not in cilindros:
+#     try:
+#         seleccion = int(input("\nOpción: "))
+#     except ValueError:
+#         print("\nError: selección no válida. Intente de nuevo.")
+#         continue
         
-    if seleccion not in cilindros:
-        print("\nError: selección no válida. Intente de nuevo.")
+#     if seleccion not in cilindros:
+#         print("\nError: selección no válida. Intente de nuevo.")
 
-# Ejecutar cálculo con la selección del usuario
-distance = 1.5  # Distancia en metros desde el cilindro de gas GLP hasta los objetos cercanos
-pressure_initial = 750000  # Presión inicial del gas en Pascales
-pressure_burst = 7.2E6  # Presión de rotura del cilindro en Pascales
-mass = cilindros[seleccion]['masa']  # Masa total del gas en kilogramos
+# # Ejecutar cálculo con la selección del usuario
+# distance = 1.5  # Distancia en metros desde el cilindro de gas GLP hasta los objetos cercanos
+# pressure_initial = 750000  # Presión inicial del gas en Pascales
+# pressure_burst = 7.2E6  # Presión de rotura del cilindro en Pascales
+# mass = cilindros[seleccion]['masa']  # Masa total del gas en kilogramos
 
-radius = bst_model(distance, pressure_initial, pressure_burst, mass)
+# radius = bst_model(distance, pressure_initial, pressure_burst, mass)
 
-print(f"""\nEl radio de la afectación de la explosión es de {radius:.2f} metros.
+# print(f"""\nEl radio de la afectación de la explosión es de {radius:.2f} metros.
 
-Consecuencias:
+# Consecuencias:
 
-1. Lesiones graves: Las personas pueden sufrir quemaduras, cortes, fracturas, 
-lesiones de órganos internos y otros tipos de lesiones graves debido a la 
-explosión y a los objetos que vuelan por el aire.
+# 1. Lesiones graves: Las personas pueden sufrir quemaduras, cortes, fracturas, 
+# lesiones de órganos internos y otros tipos de lesiones graves debido a la 
+# explosión y a los objetos que vuelan por el aire.
 
-2. Pérdida de vidas humanas: Las explosiones de gas pueden ser mortales, 
-especialmente si la explosión es de gran magnitud o si las personas se 
-encuentran muy cerca del lugar de la explosión.
+# 2. Pérdida de vidas humanas: Las explosiones de gas pueden ser mortales, 
+# especialmente si la explosión es de gran magnitud o si las personas se 
+# encuentran muy cerca del lugar de la explosión.
 
-3. Daños materiales: Las explosiones de gas pueden causar daños materiales 
-importantes, destruyendo edificios, vehículos y otras estructuras cercanas 
-al lugar de la explosión.
+# 3. Daños materiales: Las explosiones de gas pueden causar daños materiales 
+# importantes, destruyendo edificios, vehículos y otras estructuras cercanas 
+# al lugar de la explosión.
 
-Recomendaciones: 
+# Recomendaciones: 
 
-1. Mantener el cilindro en buen estado: Asegurarse de que el cilindro de gas 
-esté en buen estado y sea manipulado correctamente. Realizar inspecciones 
-periódicas para detectar posibles fugas o daños en el cilindro.
+# 1. Mantener el cilindro en buen estado: Asegurarse de que el cilindro de gas 
+# esté en buen estado y sea manipulado correctamente. Realizar inspecciones 
+# periódicas para detectar posibles fugas o daños en el cilindro.
 
-2. Almacenamiento adecuado: Almacenar los cilindros de gas GLP en lugares 
-bien ventilados, alejados de fuentes de calor y en posición vertical. 
-Mantenerlos en áreas al aire libre y protegerlos de la lluvia y el sol directo.
+# 2. Almacenamiento adecuado: Almacenar los cilindros de gas GLP en lugares 
+# bien ventilados, alejados de fuentes de calor y en posición vertical. 
+# Mantenerlos en áreas al aire libre y protegerlos de la lluvia y el sol directo.
 
-3. Capacitación del personal: Capacitar al personal en el manejo de cilindros 
-de gas GLP, incluyendo el proceso de transporte, almacenamiento y manipulación 
-segura. Así mismo, tener un plan de acción en caso de una emergencia.
+# 3. Capacitación del personal: Capacitar al personal en el manejo de cilindros 
+# de gas GLP, incluyendo el proceso de transporte, almacenamiento y manipulación 
+# segura. Así mismo, tener un plan de acción en caso de una emergencia.
 
-4. Instalaciones adecuadas: Asegurarse de que las instalaciones de gas estén 
-diseñadas y construidas adecuadamente para evitar fugas de gas y tener medidas 
-de seguridad, como detectores de gas y sistemas de ventilación.
+# 4. Instalaciones adecuadas: Asegurarse de que las instalaciones de gas estén 
+# diseñadas y construidas adecuadamente para evitar fugas de gas y tener medidas 
+# de seguridad, como detectores de gas y sistemas de ventilación.
 
-5. Sensibilización a la comunidad: Realizar campañas de sensibilización para 
-informar a la comunidad sobre los riesgos de los cilindros de gas y cómo tomar 
-medidas preventivas en caso de una emergencia.""")
+# 5. Sensibilización a la comunidad: Realizar campañas de sensibilización para 
+# informar a la comunidad sobre los riesgos de los cilindros de gas y cómo tomar 
+# medidas preventivas en caso de una emergencia.""")
