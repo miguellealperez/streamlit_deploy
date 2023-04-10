@@ -87,19 +87,19 @@ st.write(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {de
 
 st.header("Alcance de afectación de la explosión de un cilindro de gas")
 desden = """\n
-def bst_model(distance, pressure_initial, pressure_burst, mass):
+    def bst_model(distance, pressure_initial, pressure_burst, mass):
     
-    # Constantes del modelo
-    k = 1.4  # Coeficiente de isentrópica
-    C = 1.5  # Coeficiente empírico
-    
-    # Cálculo de la energía total de la explosión
-    energy = (k / (k - 1)) * mass * (pressure_burst / pressure_initial) * (1 - math.pow(1 / (pressure_burst / pressure_initial), (k - 1) / k))
-    
-    # Cálculo del alcance de afectación
-    radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
-    
-    return radius
+        # Constantes del modelo
+        k = 1.4  # Coeficiente de isentrópica
+        C = 1.5  # Coeficiente empírico
+        
+        # Cálculo de la energía total de la explosión
+        energy = (k / (k - 1)) * mass * (pressure_burst / pressure_initial) * (1 - math.pow(1 / (pressure_burst / pressure_initial), (k - 1) / k))
+        
+        # Cálculo del alcance de afectación
+        radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
+        
+        return radius
 """
 st.write(f"\nUtilizando el Modelo de Baker-Strehlow-Tang. {desden}")
 import math
