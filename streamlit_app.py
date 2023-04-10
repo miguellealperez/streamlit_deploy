@@ -134,32 +134,32 @@ cilindros = {
 opciones2 = ['Cilindro de 100 lb (masa = 45 kg)', 'Cilindro de 40 lb (masa = 18 kg)', 'Cilindro de 33 lb (masa = 15 kg)', 'Cilindro de 20 lb (masa = 9 kg)', 'Cilindro de 10 lb (masa = 5 kg)']
 opcion_seleccionada2 = st.selectbox("\n\nSeleccione el cilindro que exploto: \n", cilindros)
 
-# Mostrar opciones de cilindros y pedir selección al usuario
-print("\n\nSeleccione el cilindro que exploto: \n")
-for i in cilindros:
-    print(f"{i}: {cilindros[i]['descripcion']} (masa = {cilindros[i]['masa']} kg)")
+# # Mostrar opciones de cilindros y pedir selección al usuario
+# print("\n\nSeleccione el cilindro que exploto: \n")
+# for i in cilindros:
+#     print(f"{i}: {cilindros[i]['descripcion']} (masa = {cilindros[i]['masa']} kg)")
 
-# Ciclo para validar la selección del usuario
-seleccion = None
-while seleccion not in cilindros:
-    try:
-        seleccion = int(input("\nOpción: "))
-    except ValueError:
-        print("\nError: selección no válida. Intente de nuevo.")
-        continue
+# # Ciclo para validar la selección del usuario
+# seleccion = None
+# while seleccion not in cilindros:
+#     try:
+#         seleccion = int(input("\nOpción: "))
+#     except ValueError:
+#         print("\nError: selección no válida. Intente de nuevo.")
+#         continue
         
-    if seleccion not in cilindros:
-        print("\nError: selección no válida. Intente de nuevo.")
+#     if seleccion not in cilindros:
+#         print("\nError: selección no válida. Intente de nuevo.")
 
 # Ejecutar cálculo con la selección del usuario
 distance = 1.5  # Distancia en metros desde el cilindro de gas GLP hasta los objetos cercanos
 pressure_initial = 750000  # Presión inicial del gas en Pascales
 pressure_burst = 7.2E6  # Presión de rotura del cilindro en Pascales
-mass = cilindros[seleccion]['masa']  # Masa total del gas en kilogramos
+mass = cilindros[opcion_seleccionada2]['masa']  # Masa total del gas en kilogramos
 
 radius = bst_model(distance, pressure_initial, pressure_burst, mass)
 
-print(f"""\nEl radio de la afectación de la explosión es de {radius:.2f} metros.
+st.write(f"""\nEl radio de la afectación de la explosión es de {radius:.2f} metros.
 
 Consecuencias:
 
