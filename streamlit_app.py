@@ -11,7 +11,18 @@ st.header('Seleccione un departamento por su grupo para determinar la afectacion
 opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
 opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
 opcion_seleccionada3 = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
+opciones = {
+    'Grupo 1': ['Departamento A', 'Departamento B', 'Departamento C'],
+    'Grupo 2': ['Departamento D', 'Departamento E', 'Departamento F'],
+    'Grupo 3': ['Departamento G', 'Departamento H', 'Departamento I']
+}
 
+seleccion = st.selectbox('Selecciona un departamento', opciones.items(), format_func=lambda x: x[0])
+
+if seleccion:
+    departamento = st.selectbox('', seleccion[1])
+    st.write(f'Se ha seleccionado el departamento {departamento}')
+    
 if grupo_1.count(opcion_seleccionada1) > 0:
     jerarquia = 1
     descripcion = """\n\n
