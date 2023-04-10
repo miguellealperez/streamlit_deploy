@@ -21,7 +21,7 @@ seleccion = st.selectbox('Selecciona un departamento', opciones.items(), format_
 
 if seleccion:
     departamento = st.selectbox('', seleccion[1])
-    st.write(f'Se ha seleccionado el departamento {departamento}')
+    # st.write(f'Se ha seleccionado el departamento {departamento}')
     
 if grupo_1.count(seleccion) > 0:
     jerarquia = 1
@@ -75,7 +75,7 @@ else:
     que pueda representar un peligro."""
 
 # Mostramos la información del departamento seleccionado
-st.write(f"\nEl departamento seleccionado es: {seleccion}")
+st.write(f"\nEl departamento seleccionado es: {departamento}")
 st.write(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {descripcion}")
 
 
