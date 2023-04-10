@@ -125,11 +125,11 @@ def bst_model(distance, pressure_initial, pressure_burst, mass):
 
 # Opciones de cilindros y masas
 cilindros = {
-    1: {"descripcion": "Cilindro de 100 lb","masa": 45},
-    2: {"descripcion": "Cilindro de 40 lb", "masa": 18},
-    3: {"descripcion": "Cilindro de 33 lb", "masa": 15},
-    4: {"descripcion": "Cilindro de 20 lb", "masa": 9},
-    5: {"descripcion": "Cilindro de 10 lb", "masa": 5}
+    "100 lb": {"descripcion": "Cilindro de 100 lb","masa": 45},
+    "40 lb": {"descripcion": "Cilindro de 40 lb", "masa": 18},
+    "33 lb": {"descripcion": "Cilindro de 33 lb", "masa": 15},
+    "20 lb": {"descripcion": "Cilindro de 20 lb", "masa": 9},
+    "10 lb": {"descripcion": "Cilindro de 10 lb", "masa": 5}
 }
 opciones2 = ['Cilindro de 100 lb (masa = 45 kg)', 'Cilindro de 40 lb (masa = 18 kg)', 'Cilindro de 33 lb (masa = 15 kg)', 'Cilindro de 20 lb (masa = 9 kg)', 'Cilindro de 10 lb (masa = 5 kg)']
 opcion_seleccionada2 = st.selectbox("\n\nSeleccione el cilindro que exploto: \n", cilindros)
