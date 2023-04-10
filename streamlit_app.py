@@ -23,7 +23,7 @@ if seleccion:
     departamento = st.selectbox('', seleccion[1])
     st.write(f'Se ha seleccionado el departamento {departamento}')
     
-if grupo_1.count(opciones) > 0:
+if grupo_1.count(seleccion) > 0:
     jerarquia = 1
     descripcion = """\n\n
     Este departamento se encuentra en el grupo con mayor probabilidad de ser 
@@ -39,7 +39,7 @@ if grupo_1.count(opciones) > 0:
     \n3. Se debe fortalecer la capacidad de respuesta de las autoridades locales y nacionales 
     ante emergencias, mediante la dotación de equipos y herramientas necesarios, y la 
     actualización constante de los planes de contingencia."""
-elif grupo_2.count(opciones) > 0:
+elif grupo_2.count(seleccion) > 0:
     jerarquia = 2
     descripcion = """\n\n
     Este departamento se encuentra en el grupo intermedio de probabilidad de ser
@@ -75,7 +75,7 @@ else:
     que pueda representar un peligro."""
 
 # Mostramos la información del departamento seleccionado
-st.write(f"\nEl departamento seleccionado es: {opciones}")
+st.write(f"\nEl departamento seleccionado es: {seleccion}")
 st.write(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {descripcion}")
 
 
