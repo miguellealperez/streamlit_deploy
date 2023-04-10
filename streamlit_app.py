@@ -6,15 +6,15 @@ grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca"
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 
-st.header('Seleccione un departamento por su grupo para determinar la afectacion de la explosion del tanque de GLP:')
+st.header('Seleccione un Grupo y su departamento correspondiente para determinar la afectacion de la explosion del tanque de GLP:')
 
-opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
-opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
-opcion_seleccionada3 = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
+# opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
+# opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
+# opcion_seleccionada3 = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
 opciones = {
-    'Grupo 1': ['Departamento A', 'Departamento B', 'Departamento C'],
-    'Grupo 2': ['Departamento D', 'Departamento E', 'Departamento F'],
-    'Grupo 3': ['Departamento G', 'Departamento H', 'Departamento I']
+    'Grupo 1': grupo_1,
+    'Grupo 2': grupo_2,
+    'Grupo 3': grupo_3
 }
 
 seleccion = st.selectbox('Selecciona un departamento', opciones.items(), format_func=lambda x: x[0])
