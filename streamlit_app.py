@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Definimos los grupos de departamentos en base a su topografía
-st.write("""Estimación del área de afectación de explosiones de cilindros de gas GLP 
+st.title("""Estimación del área de afectación de explosiones de cilindros de gas GLP 
 en Colombia mediante un modelo matemático de difusión en medios heterogéneos""")
 grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca"]
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
