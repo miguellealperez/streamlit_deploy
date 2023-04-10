@@ -99,6 +99,7 @@ desden = """\n
         # Cálculo del alcance de afectación
         radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
         
+        #Devolviendo como valor el alcance de afectación
         return radius
 """
 st.write(f"\nUtilizando el Modelo de Baker-Strehlow-Tang. {desden}")
@@ -119,6 +120,9 @@ def bst_model(distance, pressure_initial, pressure_burst, mass):
     radius = C * math.pow(energy, 1/3) * math.pow(distance, 2/3)
     
     return radius
+
+opciones2 = ['Cilindro de 100 lb (masa = 45 kg)', 'Cilindro de 40 lb (masa = 18 kg)', 'Cilindro de 33 lb (masa = 15 kg)', 'Cilindro de 20 lb (masa = 9 kg)', 'Cilindro de 10 lb (masa = 5 kg)']
+opcion_seleccionada2 = st.selectbox("\n\nSeleccione el cilindro que exploto: \n", cilindros)
 
 # Opciones de cilindros y masas
 cilindros = {
