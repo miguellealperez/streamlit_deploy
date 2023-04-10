@@ -80,7 +80,7 @@ else:
     que pueda representar un peligro."""
 
 # Mostramos la información del departamento seleccionado
-st.write(f"\nEl departamento seleccionado es: ",'\033[1m' + '{departamento}' + '\033[0m')
+st.write("\nEl departamento seleccionado es: ",'\033[1m' + departamento + '\033[0m')
 st.write(f"\nEste departamento pertenece al grupo de jerarquía {jerarquia}. {descripcion}")
 
 # Código para alcance de afectación de la explosión de un cilindro de gas
