@@ -16,18 +16,18 @@ opciones = {
     'Grupo 2': grupo_2,
     'Grupo 3': grupo_3
 }
-seleccion = st.selectbox('Selecciona un departamento ', grupo_total)
-#seleccion = st.selectbox('Primero el Grupo y luego el departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
+#seleccion = st.selectbox('Selecciona un departamento ', grupo_total)
+seleccion = st.selectbox('Primero el Grupo y luego el departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
 # grupo_seleccionado = st.selectbox('Selecciona un grupo', options=list(opciones.keys()), index=0)
 # departamentos = opciones[grupo_seleccionado]
 # titulo = 'Selecciona un departamento' if grupo_seleccionado != 'Grupo 2' else 'Selecciona un departamento del grupo 2'
 # seleccion = st.selectbox(titulo, options=departamentos, index=0, key=grupo_seleccionado, disabled=grupo_seleccionado == 'Grupo 2')
 
-if seleccion:
-    departamento = st.selectbox(seleccion[1])
-
 # if seleccion:
-#     departamento = st.selectbox('', seleccion[1])
+#     departamento = st.selectbox(seleccion[1])
+
+if seleccion:
+     departamento = st.selectbox('', seleccion[1])
 #     # st.write(f'Se ha seleccionado el departamento {departamento}')
     
 if grupo_1.count(departamento):
