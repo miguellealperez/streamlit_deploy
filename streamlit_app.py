@@ -12,7 +12,7 @@ st.header('A continuación seleccione un Grupo y su correspondiente departamento
 # opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
 # opcion_seleccionada3 = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
 opciones = {
-    'Grupo 1': grupo_1,
+    'Grupo 1': grupo_total,
     'Grupo 2': grupo_2,
     'Grupo 3': grupo_3
 }
