@@ -8,7 +8,7 @@ grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Pu
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 grupo_total =["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca","Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada","Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 
-st.header('A continuación seleccione un Grupo y su correspondiente departamento para determinar la afectacion de la explosion del tanque de GLP:')
+st.header('A continuación seleccione un departamento para determinar la afectacion de la explosion del tanque de GLP:')
 
 # opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
 # opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
