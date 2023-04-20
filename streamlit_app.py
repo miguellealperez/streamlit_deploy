@@ -2,20 +2,22 @@ import streamlit as st
 
 # Definimos los grupos de departamentos en base a su topografía
 st.title("Estimación del área de afectación de explosiones de cilindros de gas GLP en Colombia mediante un modelo matemático de difusión en medios heterogéneos.")
+
 grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca"]
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 grupo_total =["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca","Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada","Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
+
 st.header('A continuación seleccione un Grupo y su correspondiente departamento para determinar la afectacion de la explosion del tanque de GLP:')
 
 # opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
 # opcion_seleccionada2 = st.selectbox('Selecciona un departamento del Grupo 2:', grupo_2)
 # opcion_seleccionada3 = st.selectbox('Selecciona un departamento del Grupo 3:', grupo_3)
-opciones = {
-    'Grupo 1': grupo_total,
-    'Grupo 2': grupo_2,
-    'Grupo 3': grupo_3
-}
+# opciones = {
+#     'Grupo 1': grupo_total,
+#     'Grupo 2': grupo_2,
+#     'Grupo 3': grupo_3
+# }
 seleccion = st.selectbox('Selecciona un departamento ', grupo_total)
 #seleccion = st.selectbox('Primero el Grupo y luego el departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
 # grupo_seleccionado = st.selectbox('Selecciona un grupo', options=list(opciones.keys()), index=0)
@@ -184,4 +186,4 @@ medidas preventivas en caso de una emergencia.""")
 
 
 
-st.write("Hola :D")
+#st.write("Hola :D")
