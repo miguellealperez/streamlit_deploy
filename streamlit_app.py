@@ -24,7 +24,7 @@ seleccion = st.selectbox('Selecciona un departamento ', grupo_total)
 # seleccion = st.selectbox(titulo, options=departamentos, index=0, key=grupo_seleccionado, disabled=grupo_seleccionado == 'Grupo 2')
 
 if seleccion:
-    departamento = seleccion[1]
+    departamento = seleccion
 
 # if seleccion:
 #      departamento = st.selectbox('', seleccion[1])
