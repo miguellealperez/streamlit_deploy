@@ -5,7 +5,7 @@ st.title("Estimación del área de afectación de explosiones de cilindros de ga
 grupo_1 = ["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca"]
 grupo_2 = ["Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada"]
 grupo_3 = ["Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
-
+grupo_total =["Antioquia", "Bolívar", "Boyacá", "Caldas", "Cauca", "Cundinamarca", "Huila", "Nariño", "Quindío", "Risaralda", "Santander", "Tolima", "Valle del Cauca","Amazonas", "Caquetá", "Chocó", "Guainía", "Guaviare", "Meta", "Putumayo", "Vaupés", "Vichada","Arauca", "Atlántico", "Casanare", "Cesar", "Córdoba", "La Guajira", "Magdalena", "Norte de Santander", "San Andrés y Providencia", "Sucre"]
 st.header('A continuación seleccione un Grupo y su correspondiente departamento para determinar la afectacion de la explosion del tanque de GLP:')
 
 # opcion_seleccionada1 = st.selectbox('Selecciona un departamento del Grupo 1:', grupo_1)
@@ -16,17 +16,19 @@ opciones = {
     'Grupo 2': grupo_2,
     'Grupo 3': grupo_3
 }
-
-seleccion = st.selectbox('Primero el Grupo y luego el departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
+seleccion = st.selectbox('Selecciona un departamento ', grupo_total)
+#seleccion = st.selectbox('Primero el Grupo y luego el departamento', opciones.items(), format_func=lambda x: x[0], key='grupo')
 # grupo_seleccionado = st.selectbox('Selecciona un grupo', options=list(opciones.keys()), index=0)
 # departamentos = opciones[grupo_seleccionado]
 # titulo = 'Selecciona un departamento' if grupo_seleccionado != 'Grupo 2' else 'Selecciona un departamento del grupo 2'
 # seleccion = st.selectbox(titulo, options=departamentos, index=0, key=grupo_seleccionado, disabled=grupo_seleccionado == 'Grupo 2')
 
-
 if seleccion:
-    departamento = st.selectbox('', seleccion[1])
-    # st.write(f'Se ha seleccionado el departamento {departamento}')
+    departamento = st.selectbox(seleccion[1])
+
+# if seleccion:
+#     departamento = st.selectbox('', seleccion[1])
+#     # st.write(f'Se ha seleccionado el departamento {departamento}')
     
 if grupo_1.count(departamento):
     jerarquia = 1
